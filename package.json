@@ -1,0 +1,18 @@
+{
+  "name": "splittogether",
+  "private": true,
+  "engines": {
+    "node": "24.x",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "build": "npm --prefix web run build",
+    "dev": "npm --prefix web run dev",
+    "lint": "npm --prefix web run lint",
+    "typecheck": "npm --prefix web run typecheck",
+    "test": "npm --prefix web test",
+    "test:e2e": "npm --prefix web run test:e2e",
+    "prisma:deploy": "npm --prefix web run prisma:deploy",
+    "prisma:seed": "npm --prefix web run prisma:seed"
+  }
+}

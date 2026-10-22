@@ -1,0 +1,7 @@
+DATABASE_URL="postgresql://splittogether:splittogether@localhost:5433/splittogether?schema=public"
+# Production requires NEXTAUTH_SECRET.
+# For local dev, app derives a deterministic per-machine dev secret if this is unset.
+# Recommended for all environments:
+# openssl rand -base64 32
+NEXTAUTH_SECRET=""
+NEXTAUTH_URL="http://localhost:3000"

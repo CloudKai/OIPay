@@ -1,0 +1,12 @@
+# Postgres (used by docker-compose and Django)
+POSTGRES_DB=splittogether
+POSTGRES_USER=splittogether
+POSTGRES_PASSWORD=splittogether
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5433
+DB_ENGINE=postgres
+
+# Django
+DJANGO_SECRET_KEY=change-me
+DJANGO_DEBUG=1
+DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1

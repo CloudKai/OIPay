@@ -1,0 +1,137 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum GroupRole {
+  OWNER
+  MEMBER
+}
+
+enum SplitType {
+  EQUAL
+  EXACT
+}
+
+enum ActivityType {
+  GROUP_CREATED
+  MEMBER_ADDED
+  EXPENSE_CREATED
+  SETTLEMENT_CREATED
+}
+
+model User {
+  id           String        @id @default(cuid())
+  email        String        @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  memberships  GroupMember[]
+
+  @@index([email])
+}
+
+model Group {
+  id          String        @id @default(cuid())
+  name        String
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  members     GroupMember[]
+  expenses    Expense[]
+  settlements Settlement[]
+  activities  ActivityLog[]
+}
+
+model GroupMember {
+  id                 String       @id @default(cuid())
+  groupId            String
+  userId             String
+  role               GroupRole    @default(MEMBER)
+  joinedAt           DateTime     @default(now())
+  group              Group        @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  user               User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  paidExpenses       Expense[]    @relation("ExpensePaidBy")
+  createdExpenses    Expense[]    @relation("ExpenseCreatedBy")
+  expenseShares      ExpenseShare[]
+  settlementsFrom    Settlement[] @relation("SettlementFrom")
+  settlementsTo      Settlement[] @relation("SettlementTo")
+  createdSettlements Settlement[] @relation("SettlementCreatedBy")
+  activities         ActivityLog[]
+
+  @@unique([groupId, userId])
+  @@index([groupId])
+  @@index([userId])
+}
+
+model Expense {
+  id                String        @id @default(cuid())
+  groupId           String
+  createdByMemberId String
+  paidByMemberId    String
+  description       String
+  totalCents        Int
+  splitType         SplitType
+  expenseDate       DateTime
+  notes             String?
+  createdAt         DateTime      @default(now())
+  group             Group         @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  createdByMember   GroupMember   @relation("ExpenseCreatedBy", fields: [createdByMemberId], references: [id], onDelete: Restrict)
+  paidByMember      GroupMember   @relation("ExpensePaidBy", fields: [paidByMemberId], references: [id], onDelete: Restrict)
+  shares            ExpenseShare[]
+
+  @@index([groupId, expenseDate])
+  @@index([paidByMemberId])
+}
+
+model ExpenseShare {
+  id         String      @id @default(cuid())
+  expenseId  String
+  memberId   String
+  shareCents Int
+  createdAt  DateTime    @default(now())
+  expense    Expense     @relation(fields: [expenseId], references: [id], onDelete: Cascade)
+  member     GroupMember @relation(fields: [memberId], references: [id], onDelete: Restrict)
+
+  @@unique([expenseId, memberId])
+  @@index([memberId])
+}
+
+model Settlement {
+  id                String      @id @default(cuid())
+  groupId           String
+  createdByMemberId String
+  fromMemberId      String
+  toMemberId        String
+  amountCents       Int
+  settledAt         DateTime
+  notes             String?
+  createdAt         DateTime    @default(now())
+  group             Group       @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  createdByMember   GroupMember @relation("SettlementCreatedBy", fields: [createdByMemberId], references: [id], onDelete: Restrict)
+  fromMember        GroupMember @relation("SettlementFrom", fields: [fromMemberId], references: [id], onDelete: Restrict)
+  toMember          GroupMember @relation("SettlementTo", fields: [toMemberId], references: [id], onDelete: Restrict)
+
+  @@index([groupId, settledAt])
+  @@index([fromMemberId])
+  @@index([toMemberId])
+}
+
+model ActivityLog {
+  id            String      @id @default(cuid())
+  groupId       String
+  actorMemberId String
+  type          ActivityType
+  message       String
+  metadata      Json?
+  createdAt     DateTime    @default(now())
+  group         Group       @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  actorMember   GroupMember @relation(fields: [actorMemberId], references: [id], onDelete: Restrict)
+
+  @@index([groupId, createdAt])
+  @@index([actorMemberId])
+}

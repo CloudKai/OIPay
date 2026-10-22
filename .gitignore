@@ -1,0 +1,15 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+.venv/
+.code/
+node_modules/
+.next/
+web/generated/
+coverage/
+playwright-report/
+test-results/
+.impeccable/review/
+*.tsbuildinfo
+npm-debug.log*

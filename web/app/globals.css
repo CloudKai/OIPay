@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  color-scheme: light;
+  --canvas: #f7f8fa;
+  --surface: #ffffff;
+  --surface-muted: #f0f2f5;
+  --border: #e5e7eb;
+  --border-strong: #c6cbd3;
+  --ink: #252a32;
+  --ink-muted: #59616e;
+  --ink-subtle: #626b78;
+  --navy: #303947;
+  --primary: #315fba;
+  --primary-hover: #274e9a;
+  --focus: #315fba;
+  --focus-soft: #dce7fb;
+  --positive: #27704f;
+  --negative: #b13a49;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+}
+
+html {
+  background: var(--canvas);
+  scroll-padding-block: 5rem 7rem;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+  caret-color: var(--primary);
+}
+
+::selection {
+  background: var(--focus-soft);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-enter] {
+    animation: enter 240ms ease-out both;
+  }
+}
+
+@keyframes enter {
+  from {
+    transform: translateY(6px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+a { text-underline-offset: 0.2em; }
+
+* { scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }

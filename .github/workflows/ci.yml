@@ -1,0 +1,69 @@
+name: Web CI
+
+on:
+  pull_request:
+    paths:
+      - "web/**"
+      - ".github/workflows/ci.yml"
+  push:
+    branches: ["main"]
+    paths:
+      - "web/**"
+      - ".github/workflows/ci.yml"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: web
+    env:
+      NEXT_PUBLIC_SITE_URL: http://127.0.0.1:3100
+      AUTH_RATE_LIMIT_SECRET: ci-only-rate-limit-secret-not-for-production
+      CRON_SECRET: ci-only-recovery-secret-not-for-production
+      E2E_LOCAL_SERVICES: "true"
+      E2E_REQUIRE_AUTH: "true"
+      EMAIL_DELIVERY_MODE: disabled
+      RUN_DATABASE_TESTS: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - uses: supabase/setup-cli@v3
+        with:
+          version: 2.84.2
+      - name: Start isolated database and authentication
+        run: supabase start
+      - name: Configure local test services
+        run: |
+          supabase status -o env > "$RUNNER_TEMP/supabase-test.env"
+          node scripts/configure-test-env.mjs "$RUNNER_TEMP/supabase-test.env"
+      - run: npm run prisma:generate
+      - run: npm run prisma:deploy
+      - run: npm run prisma:seed
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      # Keep the audit visible. Current high advisories are in the development
+      # esbuild toolchain and have no compatible patched release.
+      - run: npm audit --omit=dev --audit-level=critical
+      - name: Upload browser failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-test-results
+          path: |
+            web/playwright-report/
+            web/test-results/
+          retention-days: 7
+      - name: Stop isolated test services
+        if: always()
+        run: supabase stop --no-backup

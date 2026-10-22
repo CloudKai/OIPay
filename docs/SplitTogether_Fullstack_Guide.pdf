@@ -1,0 +1,247 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 4 0 R 6 0 R 8 0 R ] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2706 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(SplitTogether Fullstack Guide \(Beginner-Friendly\)) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(1\) What this app is) Tj
+0 -16 Td
+(SplitTogether is a web app where a frontend UI talks to backend API routes and a PostgreSQL) Tj
+0 -16 Td
+(database.) Tj
+0 -16 Td
+(Users can sign up, log in, create rooms, add expenses, and track balances.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(2\) Stack used and why) Tj
+0 -16 Td
+(- Next.js 14 \(App Router\): one project for UI pages and backend API routes, simpler for MVP) Tj
+0 -16 Td
+(speed.) Tj
+0 -16 Td
+(- TypeScript: catches mistakes earlier and makes refactors safer.) Tj
+0 -16 Td
+(- React + Tailwind CSS: reusable UI components and fast styling.) Tj
+0 -16 Td
+(- PostgreSQL: reliable relational database for connected data \(users, groups, expenses\).) Tj
+0 -16 Td
+(- Prisma ORM: type-safe DB queries and easy schema management.) Tj
+0 -16 Td
+(- NextAuth \(credentials\): session/login handling integrated with Next.js.) Tj
+0 -16 Td
+(- Zod validation: clear request validation and safer API inputs.) Tj
+0 -16 Td
+(- Docker Compose: predictable local Postgres setup.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(3\) How frontend and backend are linked in this app) Tj
+0 -16 Td
+(Flow: user action in UI -> fetch\(\) call -> /api route -> validation/auth checks -> Prisma DB) Tj
+0 -16 Td
+(query -> JSON response -> UI updates.) Tj
+0 -16 Td
+(Example \(create room\):) Tj
+0 -16 Td
+(- UI component submits room name from dashboard form.) Tj
+0 -16 Td
+(- API route POST /api/groups validates input, checks session, creates Group + GroupMember +) Tj
+0 -16 Td
+(ActivityLog.) Tj
+0 -16 Td
+(- UI gets returned room id and navigates to /groups/{id}.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(4\) Key folders to know) Tj
+0 -16 Td
+(- web/app/: pages and API routes.) Tj
+0 -16 Td
+(- web/components/: reusable UI pieces.) Tj
+0 -16 Td
+(- web/lib/: shared logic \(session helpers, money helpers, balance math\).) Tj
+0 -16 Td
+(- web/prisma/schema.prisma: data model.) Tj
+0 -16 Td
+(- web/prisma/seed.ts: demo seed data.) Tj
+0 -16 Td
+(- web/middleware.ts: route protection.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(5\) Authentication in simple terms) Tj
+0 -16 Td
+(- Signup endpoint stores password hash \(not plain text\).) Tj
+0 -16 Td
+(- Login checks password hash and creates session token.) Tj
+0 -16 Td
+(- Protected pages \(dashboard/groups\) redirect to login if not authenticated.) Tj
+0 -16 Td
+(- API routes also check session server-side before writing data.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(6\) Data model basics) Tj
+0 -16 Td
+(Core tables: User, Group, GroupMember, Expense, ExpenseShare, Settlement, ActivityLog.) Tj
+0 -16 Td
+(Important rule: money is stored as integer cents to avoid decimal rounding bugs.) Tj
+0 -16 Td
+() Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 2845 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(7\) Running the app \(one command\)) Tj
+0 -16 Td
+(From repo root: zsh start-web.zsh) Tj
+0 -16 Td
+(What it does: starts Postgres, ensures web/.env exists, installs deps, runs Prisma generate) Tj
+0 -16 Td
+(+ db push, starts Next dev server.) Tj
+0 -16 Td
+(Useful flags: --reset-db \(wipe + reseed\), --seed, --skip-install, --port 3001.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(8\) How to build new features yourself \(repeatable checklist\)) Tj
+0 -16 Td
+(1. Write the feature behavior in plain English first.) Tj
+0 -16 Td
+(2. Update schema.prisma only if data model must change.) Tj
+0 -16 Td
+(3. Add input rules in web/lib/validation.ts.) Tj
+0 -16 Td
+(4. Implement/extend API route in web/app/api/...) Tj
+0 -16 Td
+(5. Enforce auth + room membership checks.) Tj
+0 -16 Td
+(6. Build/adjust UI component and connect to API with fetch.) Tj
+0 -16 Td
+(7. Handle success and error messages clearly for users.) Tj
+0 -16 Td
+(8. Run validation: npm run lint && npm run build.) Tj
+0 -16 Td
+(9. Smoke test: signup/login/create room/protected route/invalid input.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(9\) Alternatives and tradeoffs) Tj
+0 -16 Td
+(- Separate frontend and backend services: more scalable boundaries, more complexity.) Tj
+0 -16 Td
+(- Firebase/Supabase-first: faster setup, less control for complex business rules.) Tj
+0 -16 Td
+(- Keep Django backend + Next frontend: mature backend features, but two active stacks to) Tj
+0 -16 Td
+(maintain.) Tj
+0 -16 Td
+(- Rails/Laravel monolith: productive fullstack experience, but larger ecosystem shift.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(10\) Security and production notes) Tj
+0 -16 Td
+(- NEXTAUTH_SECRET must be set in production.) Tj
+0 -16 Td
+(- Validate all incoming API payloads \(already done with Zod\).) Tj
+0 -16 Td
+(- Never trust client-side checks alone; always enforce server-side authorization.) Tj
+0 -16 Td
+(- Keep dependencies updated; audit findings should be tracked and patched in planned) Tj
+0 -16 Td
+(upgrades.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(11\) Learning path for a beginner) Tj
+0 -16 Td
+(Week 1: HTTP basics \(request/response/status code\), JSON, DB table relationships.) Tj
+0 -16 Td
+(Week 2: React basics \(components/state/forms\) and reading existing UI components.) Tj
+0 -16 Td
+(Week 3: API route basics + Prisma queries + auth checks.) Tj
+0 -16 Td
+(Week 4: deliver one small full feature end-to-end \(example: room description\).) Tj
+0 -16 Td
+(Practice rule: always explain the feature in plain English before coding.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(12\) Quick glossary) Tj
+0 -16 Td
+(Frontend: what users see.) Tj
+0 -16 Td
+(Backend: server logic and rules.) Tj
+0 -16 Td
+(API: doorway between frontend and backend.) Tj
+0 -16 Td
+(ORM: library that translates code to DB queries.) Tj
+0 -16 Td
+(Session: logged-in state.) Tj
+0 -16 Td
+(Migration/schema change: database structure update.) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 108 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(Seed: demo data inserted into DB.) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(End of guide.) Tj
+ET
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000135 00000 n 
+0000000205 00000 n 
+0000000331 00000 n 
+0000003088 00000 n 
+0000003214 00000 n 
+0000006110 00000 n 
+0000006236 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+6394
+%%EOF
