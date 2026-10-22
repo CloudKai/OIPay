@@ -57,7 +57,7 @@ jobs:
       - run: npm audit --omit=dev --audit-level=critical
       - name: Upload browser failure evidence
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: browser-test-results
           path: |
