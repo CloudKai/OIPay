@@ -1,4 +1,4 @@
-# SplitTogether
+# OiPay
 
 SplitTogether helps friends, couples, housemates, and travel groups track shared
 expenses and record repayments. Payments happen through your usual bank, cash,
@@ -58,4 +58,3 @@ See [web development and isolated browser tests](web/README.md), the
 [architecture guide](docs/SplitTogether_Fullstack_Guide.md), and the
 [pilot deployment checklist](docs/production-operations.md). The confirmed product
 scope is in [docs/product-scope.md](docs/product-scope.md).
-# OiPay
