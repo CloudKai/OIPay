@@ -1,3 +1,4 @@
+import { BrandName } from "@/components/ui/brand-name";
 import { WalletCards } from "lucide-react";
 import Link from "next/link";
 
@@ -17,7 +18,7 @@ export default function AuthShell({
       <header className="px-6 py-6 sm:px-10 lg:px-14">
         <Link href="/" className="inline-flex items-center gap-2.5 text-base font-semibold tracking-tight">
           <WalletCards className="h-6 w-6 text-[var(--primary)]" aria-hidden="true" />
-          SplitTogether
+          <BrandName />
         </Link>
       </header>
       <div className="mx-auto grid w-full max-w-6xl flex-1 items-center gap-16 px-6 pb-16 pt-8 sm:px-10 lg:grid-cols-2 lg:gap-24 lg:pb-24">
@@ -42,7 +43,7 @@ export default function AuthShell({
           <div className="mt-7">{children}</div>
           {mode !== "recovery" ? (
             <p className="mt-6 text-center text-sm text-[var(--ink-muted)]">
-              {mode === "login" ? "New to SplitTogether?" : "Already have an account?"}{" "}
+              {mode === "login" ? "New to OIPay?" : "Already have an account?"}{" "}
               <Link
                 href={mode === "login" ? "/signup" : "/login"}
                 className="font-semibold text-[var(--primary)] hover:underline"

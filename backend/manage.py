@@ -15,7 +15,7 @@ if str(BACKEND_DIR) not in sys.path:
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'split_together.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oipay.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

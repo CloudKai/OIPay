@@ -1,6 +1,6 @@
-# SplitTogether Web
+# OIPay Web
 
-This is the active SplitTogether product.
+This is the active OIPay product.
 
 ## Stack
 

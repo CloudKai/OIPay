@@ -16,7 +16,7 @@ export default async function ResetPasswordPage() {
     <AuthShell
       mode="recovery"
       heading="Choose a new password"
-      subheading="Use a password that is unique to SplitTogether."
+      subheading="Use a password that is unique to OIPay."
     >
       <Suspense>
         <ResetPasswordForm />

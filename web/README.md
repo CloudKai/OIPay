@@ -1,4 +1,4 @@
-# SplitTogether Web
+# OIPay Web
 
 This is the active application: Next.js 16, React 19, TypeScript, Supabase Auth,
 PostgreSQL, Prisma 7, Tailwind CSS 4, and Radix UI. Supabase sends authentication

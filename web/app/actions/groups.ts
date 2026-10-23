@@ -65,10 +65,10 @@ async function deliverInvitation(input: {
   try {
     status = await sendTransactionalEmail({
       to: input.email,
-      subject: `Join ${input.groupName} on SplitTogether`,
+      subject: `Join ${input.groupName} on OIPay`,
       preview: `${input.inviterName} invited you to split expenses`,
       heading: `Join ${input.groupName}`,
-      body: `${input.inviterName} invited ${input.displayName} to share expenses and balances in SplitTogether. This invitation expires in seven days.`,
+      body: `${input.inviterName} invited ${input.displayName} to share expenses and balances in OIPay. This invitation expires in seven days.`,
       actionLabel: "Accept invitation",
       actionUrl: invitationUrl(input.token),
       idempotencyKey: `group-invite-${input.memberId}-${invitationHash(input.token)}`

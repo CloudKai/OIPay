@@ -22,7 +22,8 @@ function loginRedirect(request: NextRequest): NextResponse {
 }
 
 export async function updateSupabaseSession(request: NextRequest) {
-  // A cookie only bypasses the edge redirect. Server pages validate its hash in the database.
+  // Keep the existing credential name across the OIPay rename. A cookie only bypasses
+  // the redirect; server pages validate its hash in the database.
   const hasGuestCredential = /^[A-Za-z0-9_-]{43}$/.test(request.cookies.get("splittogether-guest")?.value ?? "");
   if (!isSupabaseConfigured()) {
     return isProtectedPath(request.nextUrl.pathname) && !hasGuestCredential

@@ -1,4 +1,4 @@
-const STATIC_CACHE = "splittogether-shell-v1";
+const STATIC_CACHE = "oipay-shell-v2";
 const OFFLINE_ASSETS = [
   "/offline",
   "/manifest.webmanifest",

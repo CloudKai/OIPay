@@ -1,3 +1,4 @@
+import { BrandName } from "@/components/ui/brand-name";
 import Link from "next/link";
 import GuestEntry from "@/components/invitations/guest-entry";
 import { Card } from "@/components/ui/card";
@@ -16,6 +17,6 @@ export default async function JoinPage({ params }: { params: Promise<{ token: st
     <h1 className="text-3xl font-semibold tracking-tight">{active ? `Join ${group.name}` : "This joining link is no longer active"}</h1>
     <p className="mt-3 text-sm leading-6 text-[var(--ink-muted)]">{active ? `Share expenses and balances in ${group.currency}. ${account ? "Your membership will be linked to your signed-in account." : "Enter your name to join. No signup needed. This browser will remember your access."}` : "Ask a group owner for a new link. An old or disabled link cannot be used to join."}</p>
     {active ? <GuestEntry token={token} initialName={account?.name ?? ""} /> : null}
-    <Link href="/" className="mt-6 inline-block text-sm font-semibold text-[var(--primary)] underline underline-offset-4">SplitTogether</Link>
+    <Link href="/" className="mt-6 inline-block text-sm font-semibold text-[var(--primary)] underline underline-offset-4"><BrandName /></Link>
   </Card></main>;
 }

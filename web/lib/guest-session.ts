@@ -4,6 +4,7 @@ import { createHash, randomBytes } from "node:crypto";
 import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
 
+// Stable credential name: changing it during a rebrand would sign out existing guests.
 export const GUEST_COOKIE_NAME = "splittogether-guest";
 export const GUEST_SESSION_MAX_AGE = 60 * 60 * 24 * 365;
 export function guestSessionExpiry() {

@@ -1,11 +1,11 @@
 # Supabase Setup
 
-SplitTogether uses Supabase Auth for login and Supabase Postgres for application
+OIPay uses Supabase Auth for login and Supabase Postgres for application
 data. Prisma remains the server-side database client.
 
 ## 1. Create a project
 
-Create a dedicated Supabase project for SplitTogether. Do not reuse a project
+Create a dedicated Supabase project for OIPay. Do not reuse a project
 that belongs to another application.
 
 From the project's **Connect** dialog, collect:
@@ -18,7 +18,7 @@ From the project's **Connect** dialog, collect:
 
 Copy `web/.env.example` to `web/.env` and replace every placeholder.
 Set `AUTH_RATE_LIMIT_SECRET` to a long random value in every deployed
-environment. SplitTogether uses it only on the server to hash login rate-limit
+environment. OIPay uses it only on the server to hash login rate-limit
 buckets before they are stored in Postgres.
 
 ## 2. Apply the database migrations
@@ -67,7 +67,7 @@ In **Authentication > Password Security**, set the minimum password length to
 protection as well.
 
 In **Authentication > Rate Limits**, keep Supabase's built-in auth limits
-enabled. SplitTogether also enforces an app-side login limiter before calling
+enabled. OIPay also enforces an app-side login limiter before calling
 Supabase Auth.
 
 ## 4. Configure email templates
@@ -95,7 +95,7 @@ Invite user:
 
 ```html
 <a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=invite&next={{ .RedirectTo }}">
-  Set up your SplitTogether login
+  Set up your OIPay login
 </a>
 ```
 
@@ -110,7 +110,7 @@ configure Resend or another SMTP provider before testing with real users.
 
 For Resend, verify a sending domain and use a dedicated authentication sender
 such as `no-reply@auth.example.com`. Keep `RESEND_API_KEY` in the app as well
-only if SplitTogether group invitations should be sent.
+only if OIPay group invitations should be sent.
 
 ## 6. Optional Google sign-in
 

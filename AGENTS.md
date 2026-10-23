@@ -12,7 +12,7 @@ and give concrete examples when discussing implementation choices or tradeoffs.
 - Pages and API routes live in `web/app/`; shared financial rules and server
   authorization live in `web/lib/`; storage changes belong in `web/prisma/`.
 - Read `docs/product-scope.md` when changing release scope and
-  `docs/SplitTogether_Fullstack_Guide.md` when changing money rules, guest access,
+  `docs/OIPay_Fullstack_Guide.md` when changing money rules, guest access,
   or account permissions.
 
 ## Financial and access rules

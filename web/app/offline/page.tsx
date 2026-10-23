@@ -13,7 +13,7 @@ export default function OfflinePage() {
         </span>
         <h1 className="mt-5 text-2xl font-semibold">You are offline</h1>
         <p className="mt-2 text-sm leading-6 text-[var(--ink-muted)]">
-          Reconnect to view balances or change financial records. SplitTogether
+          Reconnect to view balances or change financial records. OIPay
           never caches private group data or queues money changes offline.
         </p>
       </Card>

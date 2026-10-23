@@ -1,4 +1,4 @@
-"""Django settings for the SplitTogether backend.
+"""Django settings for the OIPay backend.
 
 Key points:
 - Database is configured via env vars (Postgres).
@@ -44,7 +44,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'split_together.urls'
+ROOT_URLCONF = 'oipay.urls'
 
 TEMPLATES = [
     {
@@ -62,8 +62,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'split_together.wsgi.application'
-ASGI_APPLICATION = 'split_together.asgi.application'
+WSGI_APPLICATION = 'oipay.wsgi.application'
+ASGI_APPLICATION = 'oipay.asgi.application'
 
 running_pytest = any('pytest' in arg for arg in sys.argv) or 'PYTEST_CURRENT_TEST' in os.environ
 db_engine = os.environ.get('DB_ENGINE', '').strip().lower()
@@ -82,6 +82,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
+            # Keep legacy database credentials so existing OIPay installations reconnect.
             'NAME': os.environ.get('POSTGRES_DB', 'splittogether'),
             'USER': os.environ.get('POSTGRES_USER', 'splittogether'),
             'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'splittogether'),

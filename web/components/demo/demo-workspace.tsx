@@ -1,5 +1,7 @@
 "use client";
 
+import { BrandName } from "@/components/ui/brand-name";
+
 import { RotateCcw, WalletCards } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -14,6 +16,7 @@ import { createDemoActions, createDemoState, DEMO_CURRENCY, DEMO_GROUP_ID, DEMO_
   demoMembers, getDemoQuote, parseDemoState, type DemoState } from "@/lib/demo";
 import { HISTORY_PAGE_SIZE, pageInfo, parseHistoryQuery } from "@/lib/history-query";
 
+// Preserve existing demo edits when the product name changes.
 const storageKey = "splittogether:demo:v1";
 
 function createDemoStore(initial: DemoState) {
@@ -73,7 +76,7 @@ export default function DemoWorkspace({ initialState }: { initialState: DemoStat
         <header className="border-b border-[var(--border)] bg-[var(--surface)]">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-6">
             <Link href="/login" className="flex items-center gap-2 font-bold">
-              <WalletCards className="h-5 w-5 text-[var(--primary)]" /> SplitTogether
+              <WalletCards className="h-5 w-5 text-[var(--primary)]" /> <BrandName />
             </Link>
             <div className="flex flex-wrap items-center gap-2">
               <Button asChild variant="ghost" size="sm"><Link href="/login">Exit demo</Link></Button>

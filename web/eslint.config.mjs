@@ -8,6 +8,7 @@ export default defineConfig([
   globalIgnores([
     ".next/**",
     ".next-e2e/**",
+    ".next-vercel-dev/**",
     "generated/**",
     "coverage/**",
     "playwright-report/**",

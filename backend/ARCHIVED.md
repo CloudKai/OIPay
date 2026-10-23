@@ -1,6 +1,6 @@
 # Archived Django Prototype
 
 This folder is historical reference only. The Django API is not deployed,
-started, migrated, or tested as part of the active SplitTogether product.
+started, migrated, or tested as part of the active OIPay product.
 
 All current product work lives in `web/`.

@@ -1,5 +1,7 @@
 "use client";
 
+import { BrandName } from "@/components/ui/brand-name";
+
 import {
   Activity,
   LayoutDashboard,
@@ -63,7 +65,7 @@ export default function AppNav({
         >
           <WalletCards className="h-6 w-6 shrink-0 text-[var(--primary)]" aria-hidden="true" />
           <span>
-            <span className="block text-base font-bold tracking-tight">SplitTogether</span>
+            <span className="block text-base font-bold tracking-tight"><BrandName /></span>
           </span>
         </Link>
         <nav className="mt-7 space-y-1" aria-label="Primary navigation">
@@ -81,7 +83,7 @@ export default function AppNav({
       <header className="sticky top-0 z-20 flex h-16 items-center border-b border-[var(--border)] bg-[var(--surface)] px-4 lg:hidden">
         <Link href="/dashboard" className="flex items-center gap-2 font-bold">
           <WalletCards className="h-5 w-5 text-[var(--primary)]" aria-hidden="true" />
-          SplitTogether
+          <BrandName />
         </Link>
         <div className="ml-auto">
           <SignOutButton compact guest={user.isGuest} />

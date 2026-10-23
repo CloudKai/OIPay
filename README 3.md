@@ -1,6 +1,6 @@
-# SplitTogether
+# OIPay
 
-SplitTogether is a shared-expense web app for groups. It supports equal, exact,
+OIPay is a shared-expense web app for groups. It supports equal, exact,
 percentage, and weighted-share splits; simplified debts; partial payments;
 invitations; and activity history.
 

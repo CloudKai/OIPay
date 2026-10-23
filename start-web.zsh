@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 set -euo pipefail
 
-# One-command local startup for the SplitTogether web app.
+# One-command local startup for the OIPay web app.
 # Safe defaults:
 # - applies committed Prisma migrations
 # - does NOT reset database unless --reset-db is passed
@@ -17,7 +17,7 @@ PORT=""
 
 print_help() {
   printf '%s\n' \
-    'SplitTogether web startup script' \
+    'OIPay web startup script' \
     '' \
     'Usage:' \
     '  ./start-web.zsh [options]' \

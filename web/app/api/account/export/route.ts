@@ -94,7 +94,7 @@ export async function GET() {
     {
       headers: {
         "Cache-Control": "no-store",
-        "Content-Disposition": 'attachment; filename="splittogether-export.json"'
+        "Content-Disposition": 'attachment; filename="oipay-export.json"'
       }
     }
   );

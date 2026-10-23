@@ -10,17 +10,17 @@ import { AuthProvider } from "@/components/auth/auth-provider";
 import ServiceWorkerRegistration from "@/components/pwa/service-worker-registration";
 
 export const metadata: Metadata = {
-  applicationName: "SplitTogether",
+  applicationName: "OIPay",
   title: {
-    default: "SplitTogether",
-    template: "%s | SplitTogether"
+    default: "OIPay",
+    template: "%s | OIPay"
   },
   description: "Clear shared expenses, fair splits, and simple settlements.",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "SplitTogether"
+    title: "OIPay"
   },
   icons: {
     icon: "/icons/icon.svg",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f3f7f6",
+  themeColor: "#f7f8fa",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover"

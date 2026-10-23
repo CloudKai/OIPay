@@ -1,10 +1,10 @@
-# SplitTogether Fullstack Guide (Beginner-Friendly)
+# OIPay Fullstack Guide (Beginner-Friendly)
 
 This guide explains your app stack in plain language, why each tool exists, how frontend and backend connect, and how you can build features yourself in the future.
 
-## 1) What SplitTogether Is
+## 1) What OIPay Is
 
-SplitTogether is a web app where people can:
+OIPay is a web app where people can:
 
 - create an account
 - log in securely

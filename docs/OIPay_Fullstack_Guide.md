@@ -1,4 +1,4 @@
-# SplitTogether Architecture Guide
+# OIPay Architecture Guide
 
 ## Active application
 

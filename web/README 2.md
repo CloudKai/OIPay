@@ -1,4 +1,4 @@
-# SplitTogether Next.js MVP
+# OIPay Next.js MVP
 
 Full-stack Splitwise-style web MVP built with:
 

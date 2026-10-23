@@ -1,4 +1,4 @@
-"""Database models for SplitTogether MVP.
+"""Database models for OIPay MVP.
 
 Implements:
 - Room: has an auto-generated short invite code.

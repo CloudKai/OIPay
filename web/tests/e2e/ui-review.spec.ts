@@ -9,6 +9,8 @@ test("neutral interface stays accessible and fits public and account screens", a
   await mkdir(directory, { recursive: true });
   async function capture(name: string, target: Page = page) {
     await expect(target.getByRole("heading", { level: 1 })).toBeVisible();
+    await expect(target).toHaveTitle(/OIPay/);
+    await expect(target.getByRole("link", { name: "OIPay", exact: true }).first()).toBeVisible();
     expect(await target.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     expect((await new AxeBuilder({ page: target }).analyze()).violations).toEqual([]);
     await target.evaluate(() => window.scrollTo(0, 0));

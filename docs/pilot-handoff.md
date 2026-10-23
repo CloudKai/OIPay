@@ -14,7 +14,7 @@ For an account-free presentation, choose **Try demo as a guest** on the login pa
 
 ## What has already been prepared
 
-The existing **SplitTogether** Supabase project (`wucwusyxrgatwioowfah`, Singapore region) was restored from its paused state and reported healthy. Its public application tables were empty when inspected. Its schema now includes login rate limiting, recoverable account deletion, invitation sending status, guest sessions and recovery, distinct member names, and saved currency conversions. Guest credentials are protected by row-level security and cannot be read with public API keys.
+The existing Supabase project (`wucwusyxrgatwioowfah`, Singapore region) was restored from its paused state and reported healthy. Its public application tables were empty when inspected. Its schema now includes login rate limiting, recoverable account deletion, invitation sending status, guest sessions and recovery, distinct member names, and saved currency conversions. Guest credentials are protected by row-level security and cannot be read with public API keys.
 
 The database updates were applied through Supabase's migration system, as the project's existing tables had been. This project has no Prisma migration history table. Do **not** run the old initial Prisma migrations against it: reconcile/baseline the migration history first. The ordinary Vercel build runs `npm run build`; it does not replay database migrations or seed demo records.
 
@@ -57,7 +57,7 @@ Set these in the existing project's **Production** environment. Use separate dat
 | `AUTH_RATE_LIMIT_SECRET` | A unique random server-only value of at least 32 characters |
 | `CRON_SECRET` | Another unique random server-only value of at least 32 characters |
 | `RESEND_API_KEY` | Your Resend account's sending key |
-| `EMAIL_FROM` | A sender on your verified sending domain, e.g. `SplitTogether <no-reply@your-domain>` |
+| `EMAIL_FROM` | A sender on your verified sending domain, e.g. `OIPay <no-reply@your-domain>` |
 | `EMAIL_DELIVERY_MODE` | `resend` |
 | `NEXT_PUBLIC_SUPABASE_GOOGLE_ENABLED` | `false` unless Google has been configured in Supabase |
 

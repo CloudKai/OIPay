@@ -6,7 +6,7 @@ import {
 } from "@/lib/navigation";
 
 describe("safeRedirectPath", () => {
-  const origin = "https://splittogether.example";
+  const origin = "https://oipay.example";
 
   it("accepts local paths", () => {
     expect(safeRedirectPath("/groups/123?tab=expenses", origin)).toBe(
@@ -17,7 +17,7 @@ describe("safeRedirectPath", () => {
   it("accepts same-origin absolute URLs", () => {
     expect(
       safeRedirectPath(
-        "https://splittogether.example/reset-password?from=email",
+        "https://oipay.example/reset-password?from=email",
         origin
       )
     ).toBe("/reset-password?from=email");

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-10-22T22:55:32.992539+00:00",
-  "title": "Design System: SplitTogether",
+  "title": "Design System: OIPay",
   "extensions": {
     "shadows": [
       {
@@ -115,6 +115,7 @@
       "Don’t wrap every item in another bordered card.",
       "Don’t introduce large dark panels or decorative accent backgrounds into this neutral direction.",
       "Don’t use color alone to explain a balance or error."
-    ]
+    ],
+    "brandName": "Spell the brand OIPay in plain ASCII text. Use the shared BrandName component for visible wordmarks, with an SVG capital I that has top and bottom bars and the accessible text OIPay. Keep existing typography and color tokens. Use ASCII spelling in stored text rather than look-alike Unicode characters."
   }
 }

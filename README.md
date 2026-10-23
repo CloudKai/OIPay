@@ -1,8 +1,8 @@
-# OiPay
+# OIPay
 
-SplitTogether helps friends, couples, housemates, and travel groups track shared
+OIPay helps friends, couples, housemates, and travel groups track shared
 expenses and record repayments. Payments happen through your usual bank, cash,
-or payment app; SplitTogether keeps the group's records and balances.
+or payment app; OIPay keeps the group's records and balances.
 
 The active application is `web/`: Next.js 16, React 19, TypeScript, Supabase
 Auth, PostgreSQL, Prisma 7, Tailwind CSS 4, and Radix UI. `backend/` and `mobile/`
@@ -55,7 +55,7 @@ npm run build
 ```
 
 See [web development and isolated browser tests](web/README.md), the
-[architecture guide](docs/SplitTogether_Fullstack_Guide.md), and the
+[architecture guide](docs/OIPay_Fullstack_Guide.md), and the
 [pilot deployment checklist](docs/production-operations.md). The confirmed product
 scope is in [docs/product-scope.md](docs/product-scope.md).
 

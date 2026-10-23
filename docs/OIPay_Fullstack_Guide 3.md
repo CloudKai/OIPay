@@ -1,8 +1,8 @@
-# SplitTogether Full-Stack Guide
+# OIPay Full-Stack Guide
 
 ## Plain-language architecture
 
-SplitTogether has one active application in `web/`.
+OIPay has one active application in `web/`.
 
 - **Pages and components** show the interface.
 - **Server actions** validate changes and enforce permissions.

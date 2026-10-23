@@ -1,6 +1,6 @@
-# SplitTogether
+# OIPay
 
-SplitTogether helps friends, couples, housemates, and travel groups share expenses and keep track of repayments.
+OIPay helps friends, couples, housemates, and travel groups share expenses and keep track of repayments.
 
 ## Language
 
@@ -33,5 +33,5 @@ A cost paid on behalf of people in a group, with an agreed allocation of who owe
 The portion of an expense assigned to a member.
 
 **Repayment**:
-Money paid from one member to another outside SplitTogether and recorded in the app to update what they owe.
+Money paid from one member to another outside OIPay and recorded in the app to update what they owe.
 _Avoid_: In-app transfer

@@ -260,7 +260,7 @@ export class SupabaseAuthController {
       return noStoreJson(
         {
           message:
-            "SplitTogether could not connect to its application database. Please try again shortly."
+            "OIPay could not connect to its application database. Please try again shortly."
         },
         { status: 503 }
       );

@@ -20,6 +20,7 @@ type DisplayContext = {
 };
 
 const CurrencyContext = createContext<DisplayContext | null>(null);
+// Stable browser identifiers preserve currency choices across the OIPay rename.
 const preferenceEvent = "splittogether:display-currency";
 
 function subscribe(listener: () => void) {

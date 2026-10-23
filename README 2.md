@@ -1,6 +1,6 @@
-# SplitTogether Repository
+# OIPay Repository
 
-This repository now includes a full-stack SplitTogether MVP built with Next.js 14 + Prisma in [`web/`](./web/README.md).
+This repository now includes a full-stack OIPay MVP built with Next.js 14 + Prisma in [`web/`](./web/README.md).
 
 ## Run the MVP
 

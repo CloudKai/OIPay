@@ -7,7 +7,7 @@ if (!baseUrl) {
 for (const path of ["/api/health", "/login", "/offline"]) {
   const response = await fetch(new URL(path, baseUrl), {
     redirect: "manual",
-    headers: { "user-agent": "SplitTogether deployment smoke test" }
+    headers: { "user-agent": "OIPay deployment smoke test" }
   });
   if (!response.ok) {
     throw new Error(`${path} returned ${response.status}.`);

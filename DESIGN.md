@@ -1,5 +1,5 @@
 ---
-name: SplitTogether
+name: OIPay
 description: Clean neutral shared-expense interface
 colors:
   canvas: "#f7f8fa"
@@ -83,7 +83,7 @@ components:
     padding: "2px 8px"
 ---
 
-# Design System: SplitTogether
+# Design System: OIPay
 
 ## Overview
 
@@ -100,6 +100,10 @@ Blue identifies primary actions, active tabs, navigation, and focus. Positive gr
 ## Typography
 
 Geist Sans is the body family, with Arial and sans-serif fallbacks. The headline role records the mobile group title; it grows to 36px with a 40px line height at the small breakpoint. Section titles use the title role. Body copy and field labels use 14px; supporting timestamps and hints use the caption role. Financial summary figures use tabular numerals where implemented.
+
+## Brand name
+
+Spell the brand `OIPay` in plain ASCII text everywhere, including accessible names, page titles, emails, and metadata. In visible app wordmarks, use the shared `BrandName` component: its capital `I` has clear top and bottom bars so it remains distinct from a lowercase `l`. The component uses an SVG letterform while exposing `OIPay` as its accessible text. Keep the surrounding type, colors, and spacing consistent with this design system. Use the same ASCII spelling in stored text rather than look-alike Unicode characters.
 
 ## Layout
 

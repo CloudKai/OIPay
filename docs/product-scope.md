@@ -4,7 +4,7 @@
 
 - Serve friends, couples, housemates, and travel groups sharing everyday expenses.
 - Complete the active website for phones and computers. Dedicated iPhone and Android applications come later.
-- Record repayments made through banks, cash, or external payment apps. SplitTogether does not move funds.
+- Record repayments made through banks, cash, or external payment apps. OIPay does not move funds.
 - Target a live app usable by the owner and a small group with real expenses.
 - Include working signup emails, invitations, reliable balances, phone-friendly screens, backups, and a verified end-to-end journey.
 - Verify that a person can sign up, create a group, invite friends, split expenses, record repayments, and return later to accurate records.
@@ -42,13 +42,13 @@ The owner confirmed the consolidated scope and authorized implementation and sub
 
 ## Deferred from this release
 
-Dedicated native mobile apps, moving money inside SplitTogether, recurring bills, receipt uploads, automatic reminders, multiple payers for one expense, offline financial editing, subscriptions, and a wider public launch.
+Dedicated native mobile apps, moving money inside OIPay, recurring bills, receipt uploads, automatic reminders, multiple payers for one expense, offline financial editing, subscriptions, and a wider public launch.
 
 ## Initial foundation (historical inventory before implementation)
 
 The active application is in `web/`. Code exists for authentication and account recovery, invitations, four split modes, expense and repayment corrections, balances, group management, histories, account export/deletion, and automated checks.
 
-At the initial inventory, the code used one currency per group and required a verified email account matching an invitation before joining. Optional currency conversion and joining by name through a link were requested changes. Creator-or-owner editing and immediate manual repayment recording already matched the agreed direction. The implemented behavior and current verification results are documented in [the architecture guide](SplitTogether_Fullstack_Guide.md) and [pilot handoff](pilot-handoff.md).
+At the initial inventory, the code used one currency per group and required a verified email account matching an invitation before joining. Optional currency conversion and joining by name through a link were requested changes. Creator-or-owner editing and immediate manual repayment recording already matched the agreed direction. The implemented behavior and current verification results are documented in [the architecture guide](OIPay_Fullstack_Guide.md) and [pilot handoff](pilot-handoff.md).
 
 Recurring expenses, receipt attachments, automatic reminders, multiple payers for a single expense, currency conversion, and offline financial editing were not found in that initial inventory. Currency conversion was added within this scope; the other listed features remain deferred.
 

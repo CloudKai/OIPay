@@ -41,7 +41,7 @@ export function authDisplayName(user: SupabaseUser): string {
     stringMetadata(user.user_metadata, "full_name") ??
     stringMetadata(user.user_metadata, "name") ??
     user.email?.split("@")[0] ??
-    "SplitTogether member"
+    "OIPay member"
   );
 }
 
@@ -84,7 +84,7 @@ export class AppUserSynchronizer {
       });
       if (isDatabaseConnectionError(error)) {
         throw new Error(
-          "SplitTogether could not connect to its application database. Please try again shortly.",
+          "OIPay could not connect to its application database. Please try again shortly.",
           { cause: error }
         );
       }

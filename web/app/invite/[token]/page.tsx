@@ -1,3 +1,4 @@
+import { BrandName } from "@/components/ui/brand-name";
 import { CalendarClock, UsersRound, WalletCards } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -28,7 +29,7 @@ export default async function InvitationPage({
           {expired ? <CalendarClock className="h-6 w-6" /> : <UsersRound className="h-6 w-6" />}
         </span>
         <p className="mt-5 text-sm font-semibold text-[var(--primary)]">
-          SplitTogether invitation
+          OIPay invitation
         </p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight">
           {expired ? "This invitation is no longer active" : `Join ${invitation.group.name}`}
@@ -55,7 +56,7 @@ export default async function InvitationPage({
         </div>
         <Link href="/" className="mt-6 inline-flex items-center gap-2 text-xs text-[var(--ink-subtle)]">
           <WalletCards className="h-4 w-4" />
-          SplitTogether
+          <BrandName />
         </Link>
       </Card>
     </main>

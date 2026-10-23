@@ -35,7 +35,7 @@ function emailLayout(input: {
   <body style="margin:0;background:#f4f7f7;font-family:Arial,sans-serif;color:#122427">
     <div style="display:none;max-height:0;overflow:hidden">${escapeHtml(input.preview)}</div>
     <main style="max-width:560px;margin:32px auto;padding:32px;border:1px solid #dce6e5;border-radius:20px;background:#ffffff">
-      <p style="margin:0 0 24px;color:#087b75;font-size:14px;font-weight:700">SplitTogether</p>
+      <p style="margin:0 0 24px;color:#087b75;font-size:14px;font-weight:700">O<span style="font-family:Courier New,monospace">I</span>Pay</p>
       <h1 style="margin:0 0 16px;font-size:28px;line-height:1.2">${escapeHtml(input.heading)}</h1>
       <p style="margin:0 0 24px;color:#526467;font-size:16px;line-height:1.6">${escapeHtml(input.body)}</p>
       <a href="${escapeHtml(input.actionUrl)}" style="display:inline-block;padding:12px 18px;border-radius:10px;background:#087b75;color:#ffffff;text-decoration:none;font-weight:700">${escapeHtml(input.actionLabel)}</a>
@@ -64,7 +64,7 @@ export async function sendTransactionalEmail(input: {
   }
 
   const { error } = await resend.emails.send({
-    from: process.env.EMAIL_FROM ?? "SplitTogether <onboarding@resend.dev>",
+    from: process.env.EMAIL_FROM ?? "OIPay <onboarding@resend.dev>",
     to: input.to,
     subject: input.subject,
     html: emailLayout(input)

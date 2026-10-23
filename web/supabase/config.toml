@@ -1,4 +1,5 @@
-# Disposable development/test services. Never link this project to production.
+# OIPay's disposable development/test services. Never link this project to production.
+# Retain the resource ID to reuse existing local containers, ports, and database volumes.
 project_id = "splittogether-tests"
 
 [api]
