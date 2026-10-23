@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import { errorLogRecords } from "@/lib/error-reporting";
 import { prisma } from "@/lib/prisma";
+import { databaseConnectionDiagnostics } from "@/lib/server/database-diagnostics";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 
 export async function GET() {
@@ -21,7 +22,8 @@ export async function GET() {
     );
   } catch (error) {
     console.error("[health] database check failed", {
-      errors: errorLogRecords(error)
+      errors: errorLogRecords(error),
+      connection: databaseConnectionDiagnostics(process.env.DATABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_URL)
     });
     return NextResponse.json(
       {
