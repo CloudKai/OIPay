@@ -1,0 +1,28 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "backend": {
+      "root": "backend",
+      "framework": "django",
+      "devCommand": "python manage.py runserver 127.0.0.1:$PORT --noreload"
+    },
+    "web": {
+      "root": "web",
+      "framework": "nextjs",
+      "installCommand": "npm ci",
+      "buildCommand": "npm run build"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": { "service": "web" }
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/account-deletions",
+      "schedule": "0 3 * * *"
+    }
+  ]
+}

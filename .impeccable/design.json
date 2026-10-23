@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T22:55:32.992539+00:00",
+  "title": "Design System: SplitTogether",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "dialog",
+        "value": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
+        "purpose": "Existing dialog elevation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "enter",
+        "value": "240ms ease-out",
+        "purpose": "Translate Y from 6px to 0; only without reduced-motion preference."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "description": "Existing primary button variant.",
+      "html": "<button class=\"ds-button-primary\">Add expense</button>",
+      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 16px;border-radius:8px;font-family:var(--font-geist-sans,Arial),sans-serif;font-size:14px;line-height:20px;font-weight:600;cursor:pointer;transition:background-color 150ms,color 150ms;background:var(--primary,#315fba);color:white;border:1px solid transparent;}.ds-button-primary:hover{background:var(--primary-hover,#274e9a);}.ds-button-primary:focus-visible{outline:none;box-shadow:0 0 0 2px white,0 0 0 4px var(--focus,#315fba);}.ds-button-primary:disabled{opacity:.5;pointer-events:none;}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "description": "Existing secondary button variant.",
+      "html": "<button class=\"ds-button-secondary\">Invite member</button>",
+      "css": ".ds-button-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 16px;border-radius:8px;font-family:var(--font-geist-sans,Arial),sans-serif;font-size:14px;line-height:20px;font-weight:600;cursor:pointer;transition:background-color 150ms,color 150ms;background:white;color:var(--ink,#252a32);border:1px solid var(--border,#e5e7eb);}.ds-button-secondary:hover{background:var(--surface-muted,#f0f2f5);}.ds-button-secondary:focus-visible{outline:none;box-shadow:0 0 0 2px white,0 0 0 4px var(--focus,#315fba);}.ds-button-secondary:disabled{opacity:.5;pointer-events:none;}",
+      "refersTo": "button-secondary"
+    },
+    {
+      "name": "Ghost button",
+      "kind": "button",
+      "description": "Existing ghost button variant.",
+      "html": "<button class=\"ds-button-ghost\">Cancel</button>",
+      "css": ".ds-button-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 16px;border-radius:8px;font-family:var(--font-geist-sans,Arial),sans-serif;font-size:14px;line-height:20px;font-weight:600;cursor:pointer;transition:background-color 150ms,color 150ms;background:transparent;color:var(--ink-muted,#59616e);border:1px solid transparent;}.ds-button-ghost:hover{background:var(--surface-muted,#f0f2f5);}.ds-button-ghost:focus-visible{outline:none;box-shadow:0 0 0 2px white,0 0 0 4px var(--focus,#315fba);}.ds-button-ghost:disabled{opacity:.5;pointer-events:none;}",
+      "refersTo": "button-ghost"
+    },
+    {
+      "name": "Danger button",
+      "kind": "button",
+      "description": "Existing danger button variant.",
+      "html": "<button class=\"ds-button-danger\">Delete expense</button>",
+      "css": ".ds-button-danger{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 16px;border-radius:8px;font-family:var(--font-geist-sans,Arial),sans-serif;font-size:14px;line-height:20px;font-weight:600;cursor:pointer;transition:background-color 150ms,color 150ms;background:oklch(97.1% 0.013 17.38);color:oklch(44.4% 0.177 26.899);border:1px solid oklch(88.5% 0.062 18.334);}.ds-button-danger:hover{background:oklch(93.6% 0.032 17.717);}.ds-button-danger:focus-visible{outline:none;box-shadow:0 0 0 2px white,0 0 0 4px var(--focus,#315fba);}.ds-button-danger:disabled{opacity:.5;pointer-events:none;}"
+    },
+    {
+      "name": "Text field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Shared input with visible label and focus state.",
+      "html": "<label class=\"ds-field\">Description<input class=\"ds-input\" placeholder=\"Dinner\" /></label>",
+      "css": ".ds-field{display:grid;gap:6px;font:500 14px/20px var(--font-geist-sans,Arial),sans-serif;color:var(--ink,#252a32)}.ds-input{min-height:44px;min-width:0;padding:0 12px;border:1px solid var(--border-strong,#c6cbd3);border-radius:8px;background:white;color:var(--ink,#252a32);font:400 14px/20px var(--font-geist-sans,Arial),sans-serif;outline:none;transition:border-color 150ms,box-shadow 150ms}.ds-input::placeholder{color:var(--ink-subtle,#626b78)}.ds-input:focus{border-color:var(--primary,#315fba);box-shadow:0 0 0 2px var(--focus-soft,#dce7fb)}.ds-input:disabled{background:var(--surface-muted,#f0f2f5);color:var(--ink-subtle,#626b78)}"
+    },
+    {
+      "name": "Accent badge",
+      "kind": "chip",
+      "refersTo": "badge-accent",
+      "description": "Existing teal-named badge rendered in restrained blue.",
+      "html": "<span class=\"ds-badge\">Group</span>",
+      "css": ".ds-badge{display:inline-flex;align-items:center;border-radius:6px;padding:2px 8px;background:var(--focus-soft,#dce7fb);color:var(--primary,#315fba);font:600 12px/16px var(--font-geist-sans,Arial),sans-serif}"
+    },
+    {
+      "name": "Section card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Flat section surface with shared header and content padding.",
+      "html": "<section class=\"ds-card\"><h2 class=\"ds-card-title\">Recent expenses</h2><div class=\"ds-card-content\">Dinner · SGD 42.00</div></section>",
+      "css": ".ds-card{min-width:0;background:var(--surface,#fff);border-radius:12px;color:var(--ink,#252a32);font-family:var(--font-geist-sans,Arial),sans-serif}.ds-card-title{margin:0;padding:20px 20px 12px;font-size:18px;line-height:28px;font-weight:600}.ds-card-content{padding:8px 20px 20px;font-size:14px;line-height:20px}@media(min-width:640px){.ds-card-title{padding:24px 24px 12px}.ds-card-content{padding:8px 24px 24px}}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Desktop navigation active and inactive link styles.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Example navigation\"><a href=\"#dashboard\" aria-current=\"page\">Dashboard</a><a href=\"#groups\">Groups</a></nav>",
+      "css": ".ds-nav{display:grid;gap:4px}.ds-nav a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:8px;text-decoration:none;font:500 14px/20px var(--font-geist-sans,Arial),sans-serif;color:var(--ink-muted,#59616e);transition:background-color 150ms,color 150ms}.ds-nav a:hover{background:var(--surface-muted,#f0f2f5);color:var(--ink,#252a32)}.ds-nav a[aria-current]{background:var(--surface-muted,#f0f2f5);color:var(--primary,#315fba);font-weight:600}.ds-nav a:focus-visible{outline:2px solid var(--focus,#315fba)}"
+    },
+    {
+      "name": "Group tabs",
+      "kind": "nav",
+      "description": "Underline navigation within a group.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\" aria-label=\"Group sections\"><button role=\"tab\" aria-selected=\"true\">Overview</button><button role=\"tab\" aria-selected=\"false\">Expenses</button></div>",
+      "css": ".ds-tabs{display:flex;gap:20px;overflow-x:auto;border-bottom:1px solid var(--border,#e5e7eb)}.ds-tabs button{min-height:44px;flex-shrink:0;border:0;border-bottom:2px solid transparent;padding:0 4px;background:transparent;color:var(--ink-muted,#59616e);font:500 14px/20px var(--font-geist-sans,Arial),sans-serif;cursor:pointer}.ds-tabs button:hover{color:var(--ink,#252a32)}.ds-tabs button[aria-selected=true]{border-bottom-color:var(--primary,#315fba);color:var(--primary,#315fba)}.ds-tabs button:focus-visible{outline:2px solid var(--focus,#315fba);outline-offset:-2px}"
+    }
+  ],
+  "narrative": {
+    "overview": "Clean neutral: white and soft grey, charcoal text, a restrained blue accent. Use fewer boxes, light separators, and natural spacing so shared expenses and balances are easy to scan.",
+    "dos": [
+      "Do use shared components and semantic CSS variables.",
+      "Do separate related rows with light dividers and spacing.",
+      "Do keep blue for actions, active navigation, and focus.",
+      "Do preserve visible keyboard focus and reduced-motion behavior."
+    ],
+    "donts": [
+      "Don’t wrap every item in another bordered card.",
+      "Don’t introduce large dark panels or decorative accent backgrounds into this neutral direction.",
+      "Don’t use color alone to explain a balance or error."
+    ]
+  }
+}

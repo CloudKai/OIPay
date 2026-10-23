@@ -1,6 +1,7 @@
 # Documentation
 
 - [Pilot handoff](./pilot-handoff.md) lists the settings for deploying to your existing Vercel project and the state of the restored Supabase project.
+- [Vercel services](vercel-services.md): public web service, internal Django service, local routing checks, and future bindings.
 
 - [Product scope](product-scope.md): agreed pilot features and deferred work.
 - [Backend improvements](backend-improvements.md): developer roadmap for the friends pilot, with code evidence, priorities, and acceptance checks.

@@ -150,7 +150,7 @@ Before releasing these changes:
    Keep `SUPABASE_SECRET_KEY` configured for administrative login removal.
    Account deletion refuses to start if recovery configuration is missing.
 3. Verify the `/api/cron/account-deletions` job appears in Vercel after deployment.
-   `web/vercel.json` schedules one recovery run daily at 03:00 UTC. Normal
+   The root `vercel.json` schedules one recovery run daily at 03:00 UTC. Normal
    deletions attempt provider cleanup immediately; the daily run recovers failures.
 4. In staging, simulate a provider outage, request deletion using a disposable
    account that is not a sole group owner, and verify the application profile is

@@ -6,6 +6,8 @@
 .code/
 node_modules/
 .next/
+.next-vercel-dev/
+.vercel/
 web/generated/
 coverage/
 playwright-report/

@@ -6,6 +6,8 @@ Use the existing project you choose. No application has been deployed by this se
 
 Verified on 2026-10-23 with Node.js 24: lint, TypeScript checks, 154 unit/database tests (including simultaneous-write checks), a production build, and all twelve desktop/phone browser tests. The browser journeys cover guest joining, duplicate-name rejection, foreign expenses, manual-rate repayment fallback, personal currency display, owner/creator editing controls, recovery, account linking, and accessibility checks for login, guest joining, and conversion forms. Demo checks also cover account-free entry, expense edits, filters, repayments, sample conversions, refresh, reset, damaged storage, and unchanged access to real groups.
 
+The subsequent neutral UI refresh passed lint, TypeScript checks, a production build, and all fourteen desktop/phone browser tests. The two added screen-review tests check public pages, dashboard, groups, activity, account, demo tabs, and the expense dialog for automated accessibility issues and horizontal overflow. Desktop, tablet, and phone screenshots were also reviewed. The unit/database suite above was not rerun for this visual-only refresh.
+
 The local preview is available at `http://127.0.0.1:3100` while its server and isolated Supabase services are running. It uses a separate local test database and local authentication, not the hosted Supabase project. You can create a local account there to try the app. This local configuration skips production email delivery and confirmation, so it is not evidence that hosted signup emails work.
 
 For an account-free presentation, choose **Try demo as a guest** on the login page, or open `/demo`. This interactive sample group stores its changes only in the current browser tab. Its currency rates are labelled illustrative. Use **Reset demo** before another walkthrough. This feature needs no database migration or demo login credentials.
@@ -22,15 +24,23 @@ In your existing project's settings:
 
 | Setting | Value |
 | --- | --- |
-| Framework | Next.js |
-| Root directory, if uploading this whole repository | `web` |
-| Root directory, if uploading only the contents of `web/` | leave empty |
+| Framework | Services (per-service frameworks are declared in root `vercel.json`) |
+| Root directory | Repository root; leave empty, rather than `web` |
 | Node.js | 24.x |
-| Install command | `npm ci` |
-| Build command | `npm run build` |
+| Install command | Clear project override; `web` uses `npm ci` in its service configuration |
+| Build command | Clear project override; `web` uses `npm run build` in its service configuration |
 | Output directory | framework default |
 
-Upload/connect the current source, including `web/prisma/`, `web/package-lock.json`, and `web/vercel.json`. Exclude `.env*` files, `node_modules`, build outputs, and test screenshots. Use the environment settings below rather than uploading local credentials.
+Upload/connect the whole repository, including root `vercel.json`, `backend/`,
+`web/prisma/`, and `web/package-lock.json`. The old `web/vercel.json` has been
+consolidated into the root configuration. Exclude `.env*` files, `node_modules`,
+build outputs, and test screenshots. Use the environment settings below rather
+than uploading local credentials.
+
+The `web` service owns all public paths, including its API and authentication
+routes. The archived Django `backend` service is internal. Neither service calls
+the other, so no binding is declared. See [multi-service deployment](vercel-services.md)
+for local testing, Django configuration, and the binding policy.
 
 ## Environment variables
 

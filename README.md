@@ -58,3 +58,7 @@ See [web development and isolated browser tests](web/README.md), the
 [architecture guide](docs/SplitTogether_Fullstack_Guide.md), and the
 [pilot deployment checklist](docs/production-operations.md). The confirmed product
 scope is in [docs/product-scope.md](docs/product-scope.md).
+
+The root `vercel.json` deploys `web` publicly and the archived Django `backend`
+internally in one existing Vercel project. See [multi-service deployment](docs/vercel-services.md)
+for project settings and `vercel dev` checks.
